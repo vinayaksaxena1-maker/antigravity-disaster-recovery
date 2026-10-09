@@ -1,6 +1,6 @@
-﻿# Antigravity Disaster Recovery Setup
+# Antigravity Disaster Recovery Setup
 
-This repository contains the complete custom skills, autonomous rules, and automated recovery scripts for Google Antigravity AI Coding Assistant.
+This repository provides a Disaster Recovery bundle for Antigravity **skills, custom rules, directory junctions, and companion CLI tooling** (it restores agent capabilities and customizations, not the IDE binary itself).
 
 ## 🚀 1-Click Disaster Recovery (Fresh Machine Setup)
 
@@ -17,13 +17,13 @@ If your system crashes or you move to a new machine:
      ```
 
 ### What `setup.bat` does automatically:
-- Creates Windows Directory Junctions linking `C:\Users\<user>\.gemini\config\skills` to `D:\antigravity-skills` (saving C: drive space).
+- Creates Windows Directory Junctions linking `C:\Users\<user>\.gemini\config\skills` and `C:\Users\<user>\.gemini\antigravity\skills` to `D:\antigravity-skills` (saving C: drive space).
 - Copies active global rules (`autonomous-skills.md` and `developer-mode.md`) to `~/.gemini/config/rules/`.
-- Verifies Python and ensures `graphifyy` CLI is installed.
+- Ensures `graphifyy` CLI tool is installed (prefers `uv tool install`, falls back to `pip`).
 
 ---
 
-## 📦 Installed Skills (15 Skills)
+## 📦 Installed Skills (15 Skills tracked in `.antigravity-install-manifest.json`)
 
 1. **`concise-planning`** — Atomic planning before major feature development.
 2. **`systematic-debugging`** — Root-cause bug diagnosis from traces and logs.
@@ -39,7 +39,7 @@ If your system crashes or you move to a new machine:
 12. **`code-review-checklist`** — Edge cases, maintainability, and clean code audits.
 13. **`security-auditor`** — OWASP top-10, input sanitization, and secret protection.
 14. **`e2e-testing-patterns`** — Critical user flow automated test designs.
-15. **`graphify`** — Codebase 3D knowledge graph extraction and architecture navigation.
+15. **`graphify`** — Interactive codebase graph extraction and architecture navigation.
 
 ---
 

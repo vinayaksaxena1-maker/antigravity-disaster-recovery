@@ -48,14 +48,21 @@ if exist "%SOURCE_DIR%\rules" (
 )
 
 echo.
-echo [*] Checking Python & Graphify CLI tool...
-python --version >nul 2>&1
+echo [*] Checking Graphify CLI tool (prefers uv, falls back to pip)...
+where uv >nul 2>&1
 if %errorlevel% equ 0 (
-    echo [V] Python detected. Checking graphifyy package...
-    pip install --upgrade graphifyy >nul 2>&1
-    echo [V] graphifyy CLI ready.
+    echo [V] uv detected. Installing/updating graphifyy via uv tool...
+    uv tool install --upgrade graphifyy >nul 2>&1
+    echo [V] graphifyy CLI ready via uv.
 ) else (
-    echo [!] Python not found in PATH. Please install Python 3.10+ if you use Graphify.
+    where python >nul 2>&1
+    if %errorlevel% equ 0 (
+        echo [V] Python detected. Installing/updating graphifyy via pip...
+        pip install --upgrade graphifyy >nul 2>&1
+        echo [V] graphifyy CLI ready via pip.
+    ) else (
+        echo [!] Neither uv nor Python found in PATH. Please install uv or Python 3.10+ for Graphify.
+    )
 )
 
 echo.
