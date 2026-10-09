@@ -64,6 +64,14 @@ if exist "%SOURCE_DIR%\rules" (
 )
 
 echo.
+echo [*] Deploying MCP Server Configuration...
+if exist "%SOURCE_DIR%\mcp_config.json" (
+    copy /Y "%SOURCE_DIR%\mcp_config.json" "%CONFIG_DIR%\mcp_config.json" >nul
+    copy /Y "%SOURCE_DIR%\mcp_config.json" "%GEMINI_DIR%\antigravity\mcp_config.json" >nul
+    echo [V] MCP servers configured (puppeteer browser automation).
+)
+
+echo.
 echo [*] Checking Graphify CLI tool (prefers uv, falls back to pip)...
 where uv >nul 2>&1
 if %errorlevel% equ 0 (

@@ -47,3 +47,9 @@ If your system crashes or you move to a new machine:
 
 - **`autonomous-skills.md`**: On-demand progressive disclosure orchestrator (loads only relevant skills per task, restricts Graphify to architecture questions).
 - **`developer-mode.md`**: Developer direct response mode in Hinglish (no chat fluff, toggleable via "Bhaiya mode active" / "Dev mode active").
+
+---
+
+## 🔌 Configured MCP Servers (`mcp_config.json`)
+
+- **`puppeteer`**: Local browser automation tool (`@modelcontextprotocol/server-puppeteer`) for navigating URLs, taking UI screenshots, clicking buttons, and automated web testing without API keys.
