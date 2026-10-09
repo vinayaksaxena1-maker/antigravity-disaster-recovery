@@ -14,6 +14,8 @@ set "RULES_DIR=%CONFIG_DIR%\rules"
 set "SKILLS_JUNCTION=%CONFIG_DIR%\skills"
 set "AGY_SKILLS_JUNCTION=%GEMINI_DIR%\antigravity\skills"
 
+set "HAS_ERROR=0"
+
 echo [*] Target Antigravity Config: %CONFIG_DIR%
 echo [*] Skills Source Location:    %SOURCE_DIR%
 echo.
@@ -29,6 +31,9 @@ if exist "%SKILLS_JUNCTION%" (
 mklink /J "%SKILLS_JUNCTION%" "%SOURCE_DIR%"
 if %errorlevel% equ 0 (
     echo [V] Junction Active: %SKILLS_JUNCTION% -^> %SOURCE_DIR%
+) else (
+    echo [X] ERROR: Failed to create junction for %SKILLS_JUNCTION%
+    set "HAS_ERROR=1"
 )
 
 if exist "%AGY_SKILLS_JUNCTION%" (
@@ -37,14 +42,25 @@ if exist "%AGY_SKILLS_JUNCTION%" (
 mklink /J "%AGY_SKILLS_JUNCTION%" "%SOURCE_DIR%"
 if %errorlevel% equ 0 (
     echo [V] Junction Active: %AGY_SKILLS_JUNCTION% -^> %SOURCE_DIR%
+) else (
+    echo [X] ERROR: Failed to create junction for %AGY_SKILLS_JUNCTION%
+    set "HAS_ERROR=1"
 )
 
 echo.
 echo [*] Installing Global Rules...
 if exist "%SOURCE_DIR%\rules" (
     copy /Y "%SOURCE_DIR%\rules\*.md" "%RULES_DIR%\" >nul
-    echo [V] Rules deployed to %RULES_DIR%:
-    dir /b "%RULES_DIR%\*.md"
+    if %errorlevel% equ 0 (
+        echo [V] Rules deployed to %RULES_DIR%:
+        dir /b "%RULES_DIR%\*.md"
+    ) else (
+        echo [X] ERROR: Failed to copy rules to %RULES_DIR%
+        set "HAS_ERROR=1"
+    )
+) else (
+    echo [X] ERROR: Rules source folder not found at %SOURCE_DIR%\rules
+    set "HAS_ERROR=1"
 )
 
 echo.
@@ -53,20 +69,33 @@ where uv >nul 2>&1
 if %errorlevel% equ 0 (
     echo [V] uv detected. Installing/updating graphifyy via uv tool...
     uv tool install --upgrade graphifyy >nul 2>&1
-    echo [V] graphifyy CLI ready via uv.
+    if %errorlevel% equ 0 (
+        echo [V] graphifyy CLI ready via uv.
+    ) else (
+        echo [!] WARNING: Failed to install/update graphifyy via uv.
+    )
 ) else (
     where python >nul 2>&1
     if %errorlevel% equ 0 (
         echo [V] Python detected. Installing/updating graphifyy via pip...
         pip install --upgrade graphifyy >nul 2>&1
-        echo [V] graphifyy CLI ready via pip.
+        if %errorlevel% equ 0 (
+            echo [V] graphifyy CLI ready via pip.
+        ) else (
+            echo [!] WARNING: Failed to install/update graphifyy via pip.
+        )
     ) else (
-        echo [!] Neither uv nor Python found in PATH. Please install uv or Python 3.10+ for Graphify.
+        echo [!] WARNING: Neither uv nor Python found in PATH. Please install uv or Python 3.10+ for Graphify.
     )
 )
 
 echo.
 echo ======================================================
-echo    Disaster Recovery Completed Successfully!
+if "%HAS_ERROR%"=="0" (
+    echo    Disaster Recovery Completed Successfully!
+) else (
+    echo    [!] Disaster Recovery Completed With ERRORS!
+    echo    Please check the errors reported above.
+)
 echo ======================================================
 pause
