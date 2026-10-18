@@ -23,24 +23,27 @@ If your system crashes or you move to a new machine:
 
 ---
 
-## 📦 Installed Skills (16 Skills tracked in `.antigravity-install-manifest.json`)
+## 📦 Installed Skills (19 Skills tracked in `.antigravity-install-manifest.json`)
 
 1. **`concise-planning`** — Atomic planning before major feature development.
 2. **`systematic-debugging`** — Root-cause bug diagnosis from traces and logs.
 3. **`ui-ux-pro-max`** — Modern design systems, palettes, typography tokens, and UX guidelines.
 4. **`mobile-design`** — Mobile-first touch targets (44px+) and gesture layouts.
-5. **`accessibility-compliance-accessibility-audit`** — WCAG 2.1 AA standards and ARIA auditing.
-6. **`react-clean-modular`** — 300-line max component limits and prop-drilling prevention.
-7. **`react-best-practices`** — State management, hooks memoization, and re-render optimization.
-8. **`nextjs-best-practices`** — App Router patterns, Server vs Client components, and caching.
-9. **`fastapi-pro`** — Async REST APIs, Pydantic V2, and dependency injection.
-10. **`python-pro`** — Python 3.12+ syntax, strict types, and clean architecture.
-11. **`flutter-expert`** — Flutter widget compositions, reactive state, and performance.
-12. **`code-review-checklist`** — Edge cases, maintainability, and clean code audits.
-13. **`security-auditor`** — OWASP top-10, input sanitization, and secret protection.
-14. **`e2e-testing-patterns`** — Critical user flow automated test designs.
-15. **`graphify`** — Interactive codebase graph extraction and architecture navigation.
-16. **`paperclip-bridge`** — Multi-agent orchestrator connecting Antigravity with Paperclip at `D:\paperclip`.
+5. **`component-state-craftsman`** — Enforces 5-state component resilience (Default, Hover, Loading Skeleton, Error Fallback, Empty).
+6. **`accessibility-compliance-accessibility-audit`** — WCAG 2.1 AA standards and ARIA auditing.
+7. **`react-clean-modular`** — 300-line max component limits and prop-drilling prevention.
+8. **`react-best-practices`** — State management, hooks memoization, and re-render optimization.
+9. **`nextjs-best-practices`** — App Router patterns, Server vs Client components, and caching.
+10. **`fastapi-pro`** — Async REST APIs, Pydantic V2, and dependency injection.
+11. **`python-pro`** — Python 3.12+ syntax, strict types, and clean architecture.
+12. **`flutter-expert`** — Flutter widget compositions, reactive state, and performance.
+13. **`code-review-checklist`** — Edge cases, maintainability, and clean code audits.
+14. **`security-auditor`** — OWASP top-10, input sanitization, and secret protection.
+15. **`e2e-testing-patterns`** — Critical user flow automated test designs.
+16. **`graphify`** — Interactive codebase graph extraction and architecture navigation.
+17. **`paperclip-bridge`** — Multi-agent orchestrator connecting Antigravity with Paperclip at `D:\paperclip`.
+18. **`token-efficiency`** — Cuts LLM token spend by 40%-60% via sliced reads and compressed tool outputs.
+19. **`context-engineering`** — Prevents attention rot ('Lost in the Middle') and keeps long-running memory razor-sharp.
 
 ---
 

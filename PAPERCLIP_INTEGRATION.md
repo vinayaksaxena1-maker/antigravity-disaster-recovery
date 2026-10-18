@@ -30,11 +30,12 @@ flowchart TD
     end
 
     subgraph Your_Skills [आपकी D:\antigravity-skills]
-        S_Plan[concise-planning + PROJECT_WORKFLOW.md]
-        S_UI[ui-ux-pro-max + modern-web-guidance]
+        S_Plan[concise-planning + context-engineering]
+        S_UI[ui-ux-pro-max + modern-web-guidance + component-state-craftsman]
         S_Dev[flutter-expert + python-pro + fastapi-pro]
         S_QA[e2e-testing-patterns + puppeteer]
         S_Sec[code-review-checklist + security-auditor]
+        S_Found[token-efficiency: 60% Token Saver for all Heartbeats]
         S_Rules[rules/autonomous-skills.md: YAGNI & Zero Bloat]
     end
 
@@ -44,12 +45,25 @@ flowchart TD
     QA --> S_QA
     Reviewer --> S_Sec
 
+    S_Found -.-> PM
+    S_Found -.-> Designer
+    S_Found -.-> Engineer
+    S_Found -.-> QA
+    S_Found -.-> Reviewer
+
     S_Rules -.-> PM
     S_Rules -.-> Designer
     S_Rules -.-> Engineer
     S_Rules -.-> QA
     S_Rules -.-> Reviewer
 ```
+
+---
+
+### ⚡ Foundation Skills: टोकन व मेमोरी सुरक्षा (`token-efficiency` & `context-engineering`)
+- **`token-efficiency`**: Paperclip के स्वायत्त एजेंट्स हर हार्टबीट पर बड़े फाइल्स डंप करने के बजाय केवल स्लाइस रीड्स (30-50 लाइन्स) करते हैं। इससे आपका मासिक डॉलर/टोकन बजट 3 गुना अधिक समय तक चलता है।
+- **`context-engineering`**: जब कोई एजेंट कई घंटों तक टास्क सुलझाता है, तो यह पुरानी लॉग्स को कंप्रेस करके एजेंट को कभी हैंग या भटकने (Lost in the Middle) नहीं देता।
+- **`component-state-craftsman`**: डिज़ाइनर और कोडर एजेंट्स को बाध्य करता है कि हर UI कंपोनेंट के सभी 5 स्टेट्स (Default, Hover, Loading Skeleton, Error Fallback, Empty State) कोड में लागू हों।
 
 ---
 
