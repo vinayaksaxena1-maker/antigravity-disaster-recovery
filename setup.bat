@@ -98,6 +98,28 @@ if %errorlevel% equ 0 (
 )
 
 echo.
+echo [*] Checking Paperclip Multi-Agent Control Plane...
+if exist "D:\paperclip" (
+    echo [V] Paperclip repository found at D:\paperclip.
+    if exist "%SOURCE_DIR%\rules\user-project-boundaries.mdc" (
+        copy /Y "%SOURCE_DIR%\rules\user-project-boundaries.mdc" "D:\paperclip\rules\user-project-boundaries.mdc" >nul 2>&1
+        echo [V] Deployed user-project-boundaries.mdc to D:\paperclip\rules\
+    )
+) else (
+    echo [*] Paperclip not found at D:\paperclip. Attempting clone...
+    git clone https://github.com/vinayaksaxena1-maker/paperclip.git D:\paperclip
+    if !errorlevel! equ 0 (
+        echo [V] Paperclip cloned successfully to D:\paperclip.
+        if exist "%SOURCE_DIR%\rules\user-project-boundaries.mdc" (
+            copy /Y "%SOURCE_DIR%\rules\user-project-boundaries.mdc" "D:\paperclip\rules\user-project-boundaries.mdc" >nul 2>&1
+            echo [V] Deployed user-project-boundaries.mdc to D:\paperclip\rules\
+        )
+    ) else (
+        echo [!] WARNING: Could not auto-clone Paperclip. You can clone it manually later.
+    )
+)
+
+echo.
 echo ======================================================
 if "%HAS_ERROR%"=="0" (
     echo    Disaster Recovery Completed Successfully!

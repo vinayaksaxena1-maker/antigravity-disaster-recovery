@@ -1,0 +1,23 @@
+---
+description: Enforce user project sovereignty and craftsmanship boundaries for external repositories.
+globs: **/*
+alwaysApply: true
+---
+
+# User Project & Antigravity Craftsmanship Boundaries
+
+Apply this rule whenever a Paperclip agent, harness, or adapter interacts with external user projects (such as `D:\Sanatan_Watch` or other repositories).
+
+## 1. Project Sovereignty
+- External user projects are governed exclusively by the user's `autonomous-skills.md` and Pragmatic Engineering guidelines.
+- Never modify protected core directories (`src/`, `android/`, build scripts) unless explicitly requested and approved by the human gatekeeper.
+- Never apply Paperclip-internal build rules (`rules/*.mdc`) to external user repositories.
+
+## 2. Skill Namespacing
+- Paperclip internal operational skills are strictly namespaced under `paperclip-*` (e.g., `paperclip-board`, `paperclip-converting-plans-to-tasks`, `paperclip-create-agent`).
+- Domain craftsmanship skills are loaded from `D:\antigravity-skills\` (e.g., `ui-ux-pro-max`, `modern-web-guidance`, `flutter-expert`, `code-review-checklist`).
+- Never overwrite or shadow domain craftsmanship skills.
+
+## 3. Tool & Runtime Reuse
+- Reuse existing host toolchains (Puppeteer MCP, Git, PowerShell, Capacitor/Flutter CLI).
+- Do not install separate duplicate browser binaries, background daemons, or redundant npm packages.

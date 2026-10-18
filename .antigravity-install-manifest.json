@@ -1,6 +1,6 @@
-﻿{
+{
     "schemaVersion":  1,
-    "updatedAt":  "2026-10-09T20:30:31.521Z",
+    "updatedAt":  "2026-10-19T02:15:00.000Z",
     "entries":  [
                     "accessibility-compliance-accessibility-audit",
                     "code-review-checklist",
@@ -11,6 +11,7 @@
                     "graphify",
                     "mobile-design",
                     "nextjs-best-practices",
+                    "paperclip-bridge",
                     "python-pro",
                     "react-best-practices",
                     "react-clean-modular",

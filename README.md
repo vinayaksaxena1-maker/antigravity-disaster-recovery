@@ -23,7 +23,7 @@ If your system crashes or you move to a new machine:
 
 ---
 
-## 📦 Installed Skills (15 Skills tracked in `.antigravity-install-manifest.json`)
+## 📦 Installed Skills (16 Skills tracked in `.antigravity-install-manifest.json`)
 
 1. **`concise-planning`** — Atomic planning before major feature development.
 2. **`systematic-debugging`** — Root-cause bug diagnosis from traces and logs.
@@ -40,16 +40,28 @@ If your system crashes or you move to a new machine:
 13. **`security-auditor`** — OWASP top-10, input sanitization, and secret protection.
 14. **`e2e-testing-patterns`** — Critical user flow automated test designs.
 15. **`graphify`** — Interactive codebase graph extraction and architecture navigation.
+16. **`paperclip-bridge`** — Multi-agent orchestrator connecting Antigravity with Paperclip at `D:\paperclip`.
+
+---
+
+## 📎 Multi-Agent Control Plane (Paperclip)
+
+- **Control Plane Location:** `D:\paperclip`
+- **Integration Blueprint:** `PAPERCLIP_INTEGRATION.md`
+- **Architecture:** Zero-overlap boundary model separating Paperclip management operations (`paperclip-*`) from Antigravity domain craftsmanship skills (`ui-ux-pro-max`, `flutter-expert`, etc.).
+- **Governance:** Enforces human approval gates and token spend budgets across autonomous background agent teams.
 
 ---
 
 ## ⚙️ Global Rules (`rules/`)
 
-- **`autonomous-skills.md`**: On-demand progressive disclosure orchestrator (loads only relevant skills per task, restricts Graphify to architecture questions).
+- **`autonomous-skills.md`**: On-demand progressive disclosure orchestrator, YAGNI/zero-bloat pragmatism, and Paperclip context isolation boundaries.
 - **`developer-mode.md`**: Developer direct response mode in Hinglish (no chat fluff, toggleable via "Bhaiya mode active" / "Dev mode active").
+- **`user-project-boundaries.mdc`**: Project sovereignty rules protecting user repositories (`D:\Sanatan_Watch`, etc.) from unapproved core modifications.
 
 ---
 
 ## 🔌 Configured MCP Servers (`mcp_config.json`)
 
 - **`puppeteer`**: Local browser automation tool (`@modelcontextprotocol/server-puppeteer`) for navigating URLs, taking UI screenshots, clicking buttons, and automated web testing without API keys.
+

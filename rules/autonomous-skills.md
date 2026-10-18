@@ -19,3 +19,9 @@ description: Use only the skills needed for the current task; consult skill file
 ## Graphify
 - Graphify sirf codebase architecture, flow, visual map, cross-file connections ke sawaal par, ya user ke /graphify kehne par use karo.
 - Normal feature edits, chhote scripts aur bug fixes mein Graphify mat chalao.
+
+## Paperclip & Multi-Agent Boundaries
+- **Context Isolation**: Paperclip (`D:\paperclip`) ke aantarik rules (`rules/*.mdc`) sirf Paperclip ke apne codebase ke liye hain.
+- **User Project Sovereignty**: User ke projects (`D:\Sanatan_Watch`, etc.) par kaam karte waqt sirf user ke Pragmatic Engineering rules lagu honge (`src/`, `android/` safe rahenge).
+- **Namespacing**: Paperclip ki management skills (`paperclip-*`) aur domain craftsmanship skills (`ui-ux-pro-max`, `flutter-expert`) alag-alag layers me rahengi, koi name collision nahi hoga.
+- **Tool Reuse**: Paperclip alag se naye heavy tools install nahi karega; pehle se maujood system tools (Puppeteer, Git, Terminal) reuse karega.
