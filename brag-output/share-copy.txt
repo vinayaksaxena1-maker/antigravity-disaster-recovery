@@ -1,0 +1,10 @@
+Tired of losing your AI agent configurations when your system crashes or you switch laptops? 
+
+I built a 1-click Disaster Recovery system for Google Antigravity:
+⚡ 23 production domain skills restored in seconds
+💾 0 MB C: drive bloat via Windows directory junctions
+📱 Native Android (Google Artemis) & Web (Puppeteer) MCP automation
+🛡️ Multi-agent context isolation rules (Paperclip + custom boundaries)
+
+Clone once, run setup.bat, and never rebuild your dev setup from scratch again:
+https://github.com/vinayaksaxena1-maker/antigravity-disaster-recovery
