@@ -23,7 +23,7 @@ If your system crashes or you move to a new machine:
 
 ---
 
-## 📦 Installed Skills (22 Skills tracked in `.antigravity-install-manifest.json`)
+## 📦 Installed Skills (23 Skills tracked in `.antigravity-install-manifest.json`)
 
 1. **`concise-planning`** — Atomic planning before major feature development.
 2. **`systematic-debugging`** — Root-cause bug diagnosis from traces and logs.
@@ -47,6 +47,7 @@ If your system crashes or you move to a new machine:
 20. **`vedic-astronomy-math`** — High-precision Vedic astronomy and Jyotish mathematical engine (Lahiri ayanamsha, Sripati cusps, Shodashvarga D1-D60, Shadbala virupas, SAV 337 invariant, Vimshottari/Yogini dashas, 36 Guna Milan).
 21. **`google-artemis`** — Autonomous Android mobile automation & QA testing agent via ADB and multimodal vision (Flash & Pro self-healing modes).
 22. **`brag`** — Generates viral 20-second project launch videos, motion graphics, soundtracks, and social media copy directly from codebase analysis.
+23. **`brag-slim`** — Standalone lightweight launch video creator that builds visuals, audio, and animations with zero external bundled assets.
 
 ---
 
