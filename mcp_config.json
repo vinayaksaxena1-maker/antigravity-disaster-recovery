@@ -1,4 +1,4 @@
-﻿{
+{
   "mcpServers": {
     "puppeteer": {
       "command": "npx",
@@ -6,6 +6,17 @@
         "-y",
         "@modelcontextprotocol/server-puppeteer"
       ]
+    },
+    "artemis": {
+      "command": "D:\\artemis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "mcp_server"
+      ],
+      "cwd": "D:\\artemis",
+      "env": {
+        "PYTHONPATH": "D:\\artemis"
+      }
     }
   }
 }

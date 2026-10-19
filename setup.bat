@@ -64,11 +64,31 @@ if exist "%SOURCE_DIR%\rules" (
 )
 
 echo.
-echo [*] Deploying MCP Server Configuration...
+echo.
+echo [*] Deploying MCP Server Configuration & Schemas...
 if exist "%SOURCE_DIR%\mcp_config.json" (
     copy /Y "%SOURCE_DIR%\mcp_config.json" "%CONFIG_DIR%\mcp_config.json" >nul
     copy /Y "%SOURCE_DIR%\mcp_config.json" "%GEMINI_DIR%\antigravity\mcp_config.json" >nul
-    echo [V] MCP servers configured (puppeteer browser automation).
+    echo [V] MCP servers configured (puppeteer + google-artemis).
+)
+if exist "%SOURCE_DIR%\mcp" (
+    if not exist "%GEMINI_DIR%\antigravity\mcp" mkdir "%GEMINI_DIR%\antigravity\mcp"
+    xcopy /E /I /Y /Q "%SOURCE_DIR%\mcp\*" "%GEMINI_DIR%\antigravity\mcp\" >nul
+    echo [V] Deployed offline MCP schemas (artemis mobile automation tools).
+)
+
+echo.
+echo [*] Checking Google Artemis Android Automation Platform...
+if exist "D:\artemis" (
+    echo [V] Google Artemis repository found at D:\artemis.
+) else (
+    echo [*] Cloning Google Artemis to D:\artemis...
+    git clone https://github.com/google/artemis.git D:\artemis
+    if !errorlevel! equ 0 (
+        echo [V] Google Artemis cloned successfully to D:\artemis.
+    ) else (
+        echo [!] WARNING: Could not auto-clone Google Artemis.
+    )
 )
 
 echo.
