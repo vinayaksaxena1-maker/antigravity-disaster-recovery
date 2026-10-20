@@ -23,7 +23,7 @@ If your system crashes or you move to a new machine:
 
 ---
 
-## 📦 Installed Skills (23 Skills tracked in `.antigravity-install-manifest.json`)
+## 📦 Installed Skills (34 Skills tracked in `.antigravity-install-manifest.json`)
 
 1. **`concise-planning`** — Atomic planning before major feature development.
 2. **`systematic-debugging`** — Root-cause bug diagnosis from traces and logs.
