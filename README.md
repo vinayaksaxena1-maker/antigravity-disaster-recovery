@@ -62,8 +62,10 @@ If your system crashes or you move to a new machine:
 
 ## ⚙️ Global Rules (`rules/`)
 
+- **`teacher-anti-sycophancy-protocol.md`**: Strict Anti-Sycophancy & True Teacher protocol. Forbids blind flattery / "हाँ में हाँ मिलाना", mandates top 3 drawbacks/risks analysis before adopting tools, enforces hard refusal ("नहीं") against flawed shortcuts, and maintains absolute architectural integrity.
 - **`autonomous-skills.md`**: On-demand progressive disclosure orchestrator, YAGNI/zero-bloat pragmatism, and Paperclip context isolation boundaries.
 - **`developer-mode.md`**: Developer direct response mode in Hinglish (no chat fluff, toggleable via "Bhaiya mode active" / "Dev mode active").
+- **`developer-profile.md`**: Vinayak's technical profile, system specs, standard stack conventions, and development environment anchors.
 - **`user-project-boundaries.mdc`**: Project sovereignty rules protecting user repositories (`D:\Sanatan_Watch`, etc.) from unapproved core modifications.
 
 ---
