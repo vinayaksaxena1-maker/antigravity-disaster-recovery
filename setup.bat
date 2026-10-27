@@ -50,7 +50,7 @@ if %errorlevel% equ 0 (
 echo.
 echo [*] Installing Global Rules...
 if exist "%SOURCE_DIR%\rules" (
-    copy /Y "%SOURCE_DIR%\rules\*.md" "%RULES_DIR%\" >nul
+    xcopy /E /I /Y /Q "%SOURCE_DIR%\rules\*" "%RULES_DIR%\" >nul
     if %errorlevel% equ 0 (
         echo [V] Rules deployed to %RULES_DIR%:
         dir /b "%RULES_DIR%\*.md"
