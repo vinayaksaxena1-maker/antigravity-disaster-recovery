@@ -24,24 +24,26 @@ Kisi bhi target par inspection shuru karne se pehle, agent ko target type ke aad
 
 ---
 
-## 🎯 Phase 1: Interactive Category Selection Menu
+## 🎯 Phase 1: Interactive Category Selection (Dot-Click Modal via `ask_question`)
 
-Jab user REA invoke kare, agent turant yeh clean selector menu present karega aur user ke choice ka wait karega:
+Jab user REA invoke kare (`/rea`), agent ko text menu likhne ke bajaye **hamesha interactive modal (`ask_question` tool)** render karna anivarya hai:
 
-```text
-🎯 REA Clean-Room Engineering Engine Active!
-Master Handbook: file:///C:/Users/user/.gemini/config/rules/references/rea-clean-room-handbook.md
+### Mandatory Interactive Modal UI:
+* **Tool Call**: `ask_question`
+* **Question**: `"🎯 REA Clean-Room Engine Active! Apni category choose karein:"`
+* **Options (Radio Buttons / Dots)**:
+  1. `[1] 🌐 Website Rebuild (Live URL se clean-room web app scratch se banana)`
+  2. `[2] 📱 App Rebuild (APK ya Electron app se scratch mobile/desktop app banana)`
+  3. `[3] ⚙️ .EXE Rebuild (Native Windows machine code binary decompile via Ghidra)`
+  4. `[4A] 🔄 Existing Website Upgrade (Competitor analysis + apni site upgrade + Freemium)`
+  5. `[4B] 🔄 Existing App Upgrade (Competitor APK analysis + apni app upgrade + In-App billing)`
 
-Apni zaroorat ke hisaab se Category aur Target specify karein:
-[1]  🌐 Website Rebuild (Live URL se clean-room web app scratch se banana)
-[2]  📱 App Rebuild (APK ya Electron app se scratch mobile/desktop app banana)
-[3]  ⚙️  .EXE Rebuild (Native Windows machine code binary decompile via Ghidra)
-[4A] 🔄 Existing Website Upgrade (Competitor site analysis + apni site upgrade + Freemium)
-[4B] 🔄 Existing App Upgrade (Competitor APK analysis + apni app upgrade + In-App billing)
-
-Format: '[Category Number], Target: [URL / Path to File]'
-(Example: '1, Target: https://example.com' ya '4B, Target: references/target.apk')
-```
+### Modal Response Flow:
+1. User screen par aane wale radio button (dot) par click karke option submit karega.
+2. User ke option submit karte hi agent agle prompt mein target URL ya File Path maangega:
+   > *"Aapne **[Selected Option]** chuna hai. Kripya apne Target ka URL ya local File Path enter karein (e.g. `references/target.apk` ya `https://example.com`):"*
+3. Target aate hi agent Phase 0 (Doctor check) verify karega aur Phase 2 ke step-wise workflows ko auto-pilot par execute karega.
+*(Power-user shortcut: Agar user ne prompt mein pehle se hi category aur target path dono de diye hon, toh modal skip karke seedha execution shuru kiya ja sakta hai).*
 
 ---
 
