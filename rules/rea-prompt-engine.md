@@ -108,8 +108,33 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 
 ---
 
-## 🔒 Operational Invariants for the Agent
+## 🔒 Operational Invariants & Smart Routing for the Agent
 
-1. **Sequential Guidance**: Agent kabhi bhi saare steps ek sath fek kar user ko overwhelm nahi karega. Step 1 complete hone aur verifiable receipt aane ke baad hi Step 2 par aage badhega.
-2. **Clean-Room Enforcement**: Proprietary bytecodes, encrypted databases, brand logos, ya images copy karna strictly prohibited hai.
-3. **Receipts Over Prose**: Har milestone par compiler output (`flutter analyze`, `npm run build`), terminal exit code 0, ya automated test assertion proof lagana anivarya hai.
+1. **Dynamic Framework & Skill Routing (Context Isolation)**:
+   * **Flutter Projects (`pubspec.yaml` detected)**:
+     - Agent strictly Flutter/Dart native skills use karega (`flutter-expert`, `dart-add-unit-test`, `flutter-fix-layout-issues`).
+     - Generic `e2e-testing-patterns` strictly blocked rahegi.
+   * **Web/React Projects (`package.json` detected)**:
+     - Agent `react-clean-modular` (component structure & clean splitting) aur `react-best-practices` (performance & memoization) ko active karega.
+   * **Python/Backend Projects (`pyproject.toml` / `requirements.txt`)**:
+     - Agent REST/API tasks ke liye `fastapi-pro` aur data logic ke liye `python-pro` route karega.
+
+2. **Automated Verification Tool Routing (Puppeteer vs Artemis)**:
+   * **Web Verification (Category 1 & 4A)**:
+     - Sirf **Puppeteer** use hoga live browser navigation, DOM render checks, button clicks, aur visual verification ke liye.
+   * **Mobile/Android App Verification (Category 2 & 4B)**:
+     - Sirf **Google Artemis** use hoga live Android device/emulator QA testing, touch interactions, aur multimodal visual assertion receipts ke liye.
+
+3. **Concise Planning Protocol (Sequential Roadmap Checkpoints)**:
+   * Step 1 (Gap Analysis) complete hone ke baad agent seedha blind coding shuru nahi karega.
+   * Agent **`concise-planning`** rule use karke ek 4-step atomic roadmap (`• Step 2: ...`, `• Step 3: ...`) dikhayega aur user se permission maangega (*"Kya hum Step 2 se shuru karein?"*).
+
+4. **Token & Context Engineering Invariant**:
+   * **Ghost Token Elimination**: Raw 18MB binary ya hazaron lines ka decompiled dump context mein kabhi nahi aayega; sirf targeted classes/models extract honge (98% token savings).
+   * **Surgical Diffs Over Rewrites**: Badi 300-500 line ki files ko poora overwrite karna strictly prohibited hai. Sirf targeted `+N -M` lines badli jayengi taaki purana working code 100% safe rahe.
+
+5. **Clean-Room Enforcement**:
+   * Proprietary bytecodes, encrypted databases, brand logos, ya images copy karna strictly prohibited hai. Open-source engines aur code-based vector UI use honge.
+
+6. **Receipts Over Prose**:
+   * Har milestone par compiler output (`flutter analyze 0 errors`, `npm run build`), terminal exit code 0, ya automated test assertion proof lagana anivarya hai.
