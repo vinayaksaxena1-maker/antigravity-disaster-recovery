@@ -40,10 +40,11 @@ Jab user REA invoke kare (`/rea`), agent ko text menu likhne ke bajaye **hamesha
 
 ### Modal Response Flow:
 1. User screen par aane wale radio button (dot) par click karke option submit karega.
-2. User ke option submit karte hi agent agle prompt mein target URL ya File Path maangega:
-   > *"Aapne **[Selected Option]** chuna hai. Kripya apne Target ka URL ya local File Path enter karein (e.g. `references/target.apk` ya `https://example.com`):"*
-3. Target aate hi agent Phase 0 (Doctor check) verify karega aur Phase 2 ke step-wise workflows ko auto-pilot par execute karega.
-*(Power-user shortcut: Agar user ne prompt mein pehle se hi category aur target path dono de diye hon, toh modal skip karke seedha execution shuru kiya ja sakta hai).*
+2. User ke option submit karte hi agent agle prompt mein target URL, File Path, ya **Google Play Store Link** maangega:
+   > *"Aapne **[Selected Option]** chuna hai. Kripya apne Target ka URL, local File Path, ya **Google Play Store Link** enter karein:*  
+   > *(e.g. `references/target.apk` ya `https://play.google.com/store/apps/details?id=com.vendor.app` ya `https://example.com`):"*
+3. Target aate hi agent Phase 0 (Doctor check & Auto-downloader if Play Link) verify karega aur Phase 2 ke step-wise workflows ko auto-pilot par execute karega.
+*(Power-user shortcut: Agar user ne prompt mein pehle se hi category aur target path/link dono de diye hon, toh modal skip karke seedha execution shuru kiya ja sakta hai).*
 
 ---
 
@@ -70,8 +71,14 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 
 ---
 
-### 📱 CATEGORY 2: App Scratch Rebuild (APK / Electron)
+### 📱 CATEGORY 2: App Scratch Rebuild (APK / Play Store Link / Electron)
 * **Step 0**: Verify JADX, APKTool, or ASAR extractor.
+* **Step 0.5 (Google Play Auto-Downloader - Optional)**:
+  - Agar user ne Google Play Store link diya hai (`id=package.name`), toh agent:
+    1. Package ID extract karega.
+    2. Connected ADB device/emulator se check karega (`adb shell pm path` -> `adb pull`).
+    3. Agar device par nahi hai, toh automated mirror scraper se APK/XAPK bundle download karke `target_apk/` mein unpack karega.
+    4. *Captcha Fallback*: Agar mirror site par Captcha block ho, toh gracefully user se local APK maangega.
 * **Step 1 (Package Extraction)**: Identify framework (Flutter/React Native/Native). Recover routes, controllers, and local database models. Output architecture tree.
 * **Step 2 (Feature Tracing)**: Trace core logic (e.g., OCR heuristics, file parsing, offline storage) into clean-room specification.
 * **Step 3 (Modern Rebuild)**: Scaffold Flutter / React Native with on-device engines (e.g. Google ML Kit for OCR instead of paid cloud APIs).
@@ -100,6 +107,8 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 
 ### 🔄 CATEGORY 4B: Existing App Upgrade (Mobile/Flutter-Dedicated)
 * **Step 0**: Verify active workspace is the user's mobile app repo.
+* **Step 0.5 (Google Play Auto-Downloader - Optional)**:
+  - Agar user ne competitor ka Google Play link diya hai, toh package ID extract karke APK/XAPK bundle auto-download karke `references/` mein unpack karega.
 * **Step 1 (Mobile Gap Analysis)**: Compare target APK spec against existing Flutter/Mobile codebase. Identify slow cloud dependencies to replace with on-device logic.
 * **Step 2 (Local DB Migration)**: Auto-migrate local database (Isar/SQLite) for new fields without losing existing user data.
 * **Step 3 (Native UI & Gestures)**: Modernize screens, add haptic feedback, hero animations, and dynamic code-based templates.
