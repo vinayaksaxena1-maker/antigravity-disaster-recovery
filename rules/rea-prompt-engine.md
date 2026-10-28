@@ -174,3 +174,22 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
      - Agar kisi feature ko technical reason ki wajah se Phase 2 ke liye defer karna ho, toh agent ko mandatory **`⚠️ SCOPE REDUCTION PROPOSAL`** raise karke user ki written permission leni hogi.
      - User ke approval ke bina agent ka default mandate **100% Full Feature Parity** build karna hi hoga.
    * **Mandatory Parity Audit Verification Receipt**: Final delivery se pehle agent ko har feature ki Parity Matrix Table (Target State vs Implementation State) deni hogi jisme har item par `DONE ✅` verification receipt lagana anivarya hai.
+
+10. **Strict 1:1 Mirror Protocol (Default Baseline = ALWAYS ON)**:
+    * Har reverse-engineering project ka pehla aur anivarya lakshya **100% Hubahu 1:1 Replica (Visual + Functional Twin)** banana hoga.
+    * **Zero Creative Freedom**: AI ko apne man se koi naya color, "modern layout", ya visual shortcuts lene ki ijaazat nahi hai.
+    * Target mein agar 3,983 levels hain toh poore 3,983 aayenge; agar 3D mesh hai toh 3D aayega; agar studio audio hai toh studio audio hi aayega.
+
+11. **"10x Better / Inspired Mode" (Default = STRICTLY LOCKED)**:
+    * Yeh mode default build loop ke dauran **100% Locked** rahega.
+    * Yeh mode tabhi trigger ho sakta hai jab user Phase 1 (1:1 Hubahu Replica) ko verify karne ke baad explicitly chat mein kahe:
+      > *"Maine 1:1 match verify kar liya hai, ab isme 10x better features aur add-ons jodo."*
+    * Jab tak user yeh na kahe, tab tak AI ek pixel ya ek sound bhi apne dimaag se change nahi karega.
+
+12. **Zero Generic Material UI Invariant (Visual Asset Fidelity)**:
+    * Target app ke authentic graphical assets (parchment scroll `rolltop.png`, wooden signboards `turnboard.png`, 3D glossy buttons, custom avatars, background wallpaper `bg.webp`, custom fonts) ko Flutter ke default generic flat buttons (`ElevatedButton`) ya plain containers se replace karna **Strict Rule Violation** hoga.
+    * APK/Web ke authentic graphical assets ko unpack karke `assets/images/` mein register aur UI mein use karna anivarya hai.
+
+13. **All Screens & Modals Mandatory Invariant (Zero Screen Omission)**:
+    * AI sirf beech ki main "Game/Dashboard Screen" bana kar kaam ko Done nahi bol sakta.
+    * Target mein detect hui har user-facing screen (Home Screen, Avatar Selection, Difficulty/Speedometer Screen, Settings/Credits Modal, Victory Dialogs) ko sequential order mein 1:1 reconstruct karna mandatory hoga. Kisi bhi screen ko chhodna task failure maana jayega.
