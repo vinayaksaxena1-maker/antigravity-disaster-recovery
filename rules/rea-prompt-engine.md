@@ -65,9 +65,9 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
   Output clean blueprint to 'target_design_spec.md' without writing implementation code.
   ```
 * **Step 2 (Backend Engine)**: Scaffold Node.js / Python FastAPI endpoints matching JSON schemas with open-source packages. Verify with terminal test call.
-* **Step 3 (Frontend Rebuild)**: Next.js/React + Tailwind CSS matching extracted tokens. 100% open-source icons (Lucide/SVG), zero copyrighted logos.
-* **Step 4 (10x Better Features)**: Free AI summary (Gemini), multi-format export, zero-ad banner.
-* **Step 5 (Verification Receipt)**: Run headless test suite, check responsiveness and 0 console errors.
+* **Step 3 (Frontend Rebuild - 1:1 Hubahu)**: Next.js/React + Tailwind CSS matching extracted tokens. 100% authentic visual layout parity.
+* **Step 4 (Phase 1: 1:1 Parity Verification Receipt)**: Run headless test suite, check responsiveness, network matching, and 0 console errors.
+* **Step 5 [LOCKED - Phase 2 On-Demand Only] (10x Better Add-ons)**: Free AI summary (Gemini), multi-format export, zero-ad banner. *Activates ONLY when user explicitly unlocks Phase 2 after Step 4 passes 1:1 verification.*
 
 ---
 
@@ -145,7 +145,7 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 
 4. **Token & Context Engineering Invariant**:
    * **Ghost Token Elimination**: Raw 18MB binary ya hazaron lines ka decompiled dump context mein kabhi nahi aayega; sirf targeted classes/models extract honge (98% token savings).
-   * **Surgical Diffs Over Rewrites**: Badi 300-500 line ki files ko poora overwrite karna strictly prohibited hai. Sirf targeted `+N -M` lines badli jayengi taaki purana working code 100% safe rahe.
+   * **Surgical Diffs vs Scratch Scaffolding (Clash 3 Resolution)**: Badi files ko poora overwrite karna strictly prohibited hai; sirf targeted `+N -M` lines badli jayengi. *Clarification*: Yeh rule pehle se bani files ko edit karte waqt aur Category 4A/4B migrations mein lagu hota hai. Category 1, 2, 3 mein fresh project banate waqt naye files scratch se bina kisi diff bandhan ke create honge.
 
 5. **Clean-Room Enforcement**:
    * Proprietary bytecodes, encrypted databases, brand logos, ya images copy karna strictly prohibited hai. Open-source engines aur code-based vector UI use honge.
@@ -179,6 +179,7 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
     * Har reverse-engineering project ka pehla aur anivarya lakshya **100% Hubahu 1:1 Replica (Visual + Functional Twin)** banana hoga.
     * **Zero Creative Freedom**: AI ko apne man se koi naya color, "modern layout", ya visual shortcuts lene ki ijaazat nahi hai.
     * Target mein agar 3,983 levels hain toh poore 3,983 aayenge; agar 3D mesh hai toh 3D aayega; agar studio audio hai toh studio audio hi aayega.
+    * **YAGNI vs 1:1 Parity Resolution (Clash 1 Resolution)**: YAGNI ka matlab "features, levels, audio ya boosters drop karna" NAHI hai. YAGNI ka matlab sirf "unsolicited technical bloat ya faltu third-party libraries na daalna" hai. Target Surface Parity (1:1 Hubahu Replica) absolute hai aur kisi bhi YAGNI scope-cut se upar rahegi.
 
 11. **"10x Better / Inspired Mode" (Default = STRICTLY LOCKED)**:
     * Yeh mode default build loop ke dauran **100% Locked** rahega.
