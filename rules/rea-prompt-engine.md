@@ -147,8 +147,9 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
    * **Ghost Token Elimination**: Raw 18MB binary ya hazaron lines ka decompiled dump context mein kabhi nahi aayega; sirf targeted classes/models extract honge (98% token savings).
    * **Surgical Diffs vs Scratch Scaffolding (Clash 3 Resolution)**: Badi files ko poora overwrite karna strictly prohibited hai; sirf targeted `+N -M` lines badli jayengi. *Clarification*: Yeh rule pehle se bani files ko edit karte waqt aur Category 4A/4B migrations mein lagu hota hai. Category 1, 2, 3 mein fresh project banate waqt naye files scratch se bina kisi diff bandhan ke create honge.
 
-5. **Clean-Room Enforcement**:
-   * Proprietary bytecodes, encrypted databases, brand logos, ya images copy karna strictly prohibited hai. Open-source engines aur code-based vector UI use honge.
+5. **Clean-Room Enforcement & Asset IP Harmonization (Rule 5 & 12 Resolution)**:
+   * **Proprietary Trademarks / Brand IP (BLOCKED)**: Target studio ke official brand logos, company watermarks, ya proprietary characters ko copy karna strictly prohibited hai (unki jagah custom clean branding aayegi).
+   * **Functional UI & Game Textures (ALLOWED & MANDATORY 1:1)**: Parchment scrolls, wooden boards, glossy 3D buttons, grid lattices, custom icons, pieces, aur authentic sound assets — yeh functional assets hain aur Rule 12 ke tehat inhe unpack karke `assets/images/` aur `assets/audio/` mein use karna anivarya hai.
 
 6. **Receipts Over Prose**:
    * Har milestone par compiler output (`flutter analyze 0 errors`, `npm run build`), terminal exit code 0, ya automated test assertion proof lagana anivarya hai.
@@ -174,6 +175,7 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
      - Agar kisi feature ko technical reason ki wajah se Phase 2 ke liye defer karna ho, toh agent ko mandatory **`⚠️ SCOPE REDUCTION PROPOSAL`** raise karke user ki written permission leni hogi.
      - User ke approval ke bina agent ka default mandate **100% Full Feature Parity** build karna hi hoga.
    * **Mandatory Parity Audit Verification Receipt**: Final delivery se pehle agent ko har feature ki Parity Matrix Table (Target State vs Implementation State) deni hogi jisme har item par `DONE ✅` verification receipt lagana anivarya hai.
+   * **Asset Pack & OBB/Split Delivery Resolution**: Step 1 (X-Ray) ke dauran agent check karega ki kya levels/assets base APK ke alawa OBB ya Split Asset packs (`split_asset_pack.apk`, `main.obb`) mein hain. Agent saare split packs ko extract karega taaki 100% level catalog (e.g. 3,983 levels) bina kisi missing data ke recover ho.
 
 10. **Strict 1:1 Mirror Protocol (Default Baseline = ALWAYS ON)**:
     * Har reverse-engineering project ka pehla aur anivarya lakshya **100% Hubahu 1:1 Replica (Visual + Functional Twin)** banana hoga.
@@ -194,6 +196,10 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 13. **All Screens & Modals Mandatory Invariant (Zero Screen Omission)**:
     * AI sirf beech ki main "Game/Dashboard Screen" bana kar kaam ko Done nahi bol sakta.
     * Target mein detect hui har user-facing screen (Home Screen, Avatar Selection, Difficulty/Speedometer Screen, Settings/Credits Modal, Victory Dialogs) ko sequential order mein 1:1 reconstruct karna mandatory hoga. Kisi bhi screen ko chhodna task failure maana jayega.
+    * **Server-Dependent Screen Protocol (Offline-First Transformation)**: Agar koi screen target ke private/closed proprietary cloud backend par depend karti hai (jaise Online PvP Matchmaking ya Global Cloud Leaderboard), toh AI use chhod nahi sakta; balki use equivalent **"Offline-First / Local Mode"** mein transform karega:
+      - Online PvP ➔ Local Pass & Play (2 players on same device) ya Local AI Bot Match.
+      - Cloud Leaderboard ➔ Local High Scores List.
+      - Cloud Login ➔ Local Profile Selector.
 
 14. **The X-Ray Transformation Ledger (What's Removed vs What's Added)**:
     * **Timing**: Step 1 (X-Ray & Blueprint) complete hone ke theek baad aur Step 2 (Coding) shuru hone se **pehle**.
