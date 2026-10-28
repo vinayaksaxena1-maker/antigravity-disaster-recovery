@@ -160,3 +160,17 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 8. **True Deliverable Invariant (Native Binary over Ephemeral Web Previews)**:
    * Agar target ek Mobile APK tha, toh final deliverable receipt **`flutter build apk` ka real `.apk` binary on disk** hoga.
    * Temporary web preview (`flutter run -d chrome`) ko final task completion claim nahi maana jayega.
+
+9. **Universal Zero-Omission & Full-Parity Protocol (Scope-Lock Invariant)**:
+   * **6-Pillar Exhaustive Surface Audit**: Step 1 (X-Ray/Extraction) ke dauran agent ko target app ya game ke 100% surface area ko in 6 pillars mein map karke inventory tally deni hogi:
+     1. *Core Engine & Mechanics*: Primary workflows, input controls, physics/grid, in-game tools/boosters (Hammer, Undo, Hint).
+     2. *Meta Systems & Progression*: Total level count (e.g. all 3,983 levels), coins/stars, skin shop, inventory, daily rewards, achievements.
+     3. *Audio & Sensory Experience*: Studio sound effects (.wav/.ogg), background music, volume sliders, dynamic pitch, haptic engine.
+     4. *Visual & Rendering Pipeline*: 2D/3D render mode, procedural meshes, particle FX, screen shake, win/loss fanfares, camera perspective.
+     5. *Monetization & Entitlements*: Rewarded video ads, interstitials, coin purchases, no-ads pack, subscriptions, paywalls.
+     6. *Utility, Settings & Edge Cases*: Pause menu, restart, audio/haptic toggles, level selector grid, state persistence (game resume after kill).
+   * **Scope-Lock Invariant (Chupchap Feature Chhodne Par Pratibandh)**:
+     - Agent apne man se kisi feature, audio asset, booster, ya level bundle ko silently drop ya defer (baad ke liye) NAHI kar sakta.
+     - Agar kisi feature ko technical reason ki wajah se Phase 2 ke liye defer karna ho, toh agent ko mandatory **`⚠️ SCOPE REDUCTION PROPOSAL`** raise karke user ki written permission leni hogi.
+     - User ke approval ke bina agent ka default mandate **100% Full Feature Parity** build karna hi hoga.
+   * **Mandatory Parity Audit Verification Receipt**: Final delivery se pehle agent ko har feature ki Parity Matrix Table (Target State vs Implementation State) deni hogi jisme har item par `DONE ✅` verification receipt lagana anivarya hai.
