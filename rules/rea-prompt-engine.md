@@ -193,3 +193,11 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 13. **All Screens & Modals Mandatory Invariant (Zero Screen Omission)**:
     * AI sirf beech ki main "Game/Dashboard Screen" bana kar kaam ko Done nahi bol sakta.
     * Target mein detect hui har user-facing screen (Home Screen, Avatar Selection, Difficulty/Speedometer Screen, Settings/Credits Modal, Victory Dialogs) ko sequential order mein 1:1 reconstruct karna mandatory hoga. Kisi bhi screen ko chhodna task failure maana jayega.
+
+14. **The X-Ray Transformation Ledger (What's Removed vs What's Added)**:
+    * **Timing**: Step 1 (X-Ray & Blueprint) complete hone ke theek baad aur Step 2 (Coding) shuru hone se **pehle**.
+    * **Mandatory 3-Part Ledger Format**:
+      1. *🟢 PRESERVED 1:1 (Exact Retained)*: All levels (e.g. 3,983), 3D meshes, camera perspective, boosters, exact audio assets, avatars, authentic textures.
+      2. *🔴 REMOVED / REPLACED (Omissions & Replacements with reasons)*: Paid cloud APIs (e.g. Google Cloud Vision), tracking/telemetry, third-party ads, hardcoded secrets.
+      3. *🔵 INJECTED / ADDED (Substitutions)*: Local on-device engines (e.g. Google ML Kit, SQLite/Isar), clean-room vCard export.
+    * **Mandatory Approval Checkpoint**: AI code ki ek line bhi likhne se pehle user se puchega: *"Kya aap upar diye gaye 'Hataaya vs Joda' khate se 100% sehmat hain?"* Jab tak user approval na de, Step 2 coding shuru karna strictly prohibited hai.
