@@ -74,15 +74,20 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 ### 📱 CATEGORY 2: App Scratch Rebuild (APK / Play Store Link / Electron)
 * **Step 0**: Verify JADX, APKTool, or ASAR extractor.
 * **Step 0.5 (Google Play Auto-Downloader - Optional)**:
-  - Agar user ne Google Play Store link diya hai (`id=package.name`), toh agent:
-    1. Package ID extract karega.
-    2. Connected ADB device/emulator se check karega (`adb shell pm path` -> `adb pull`).
-    3. Agar device par nahi hai, toh automated mirror scraper se APK/XAPK bundle download karke `target_apk/` mein unpack karega.
-    4. *Captcha Fallback*: Agar mirror site par Captcha block ho, toh gracefully user se local APK maangega.
-* **Step 1 (Package Extraction)**: Identify framework (Flutter/React Native/Native). Recover routes, controllers, and local database models. Output architecture tree.
-* **Step 2 (Feature Tracing)**: Trace core logic (e.g., OCR heuristics, file parsing, offline storage) into clean-room specification.
-* **Step 3 (Modern Rebuild)**: Scaffold Flutter / React Native with on-device engines (e.g. Google ML Kit for OCR instead of paid cloud APIs).
-* **Step 4 (Verification Receipt)**: Run static analysis (`flutter analyze`), confirm 0 errors and compile check.
+  - Agar user ne Google Play Store link diya hai (`id=package.name`), toh package ID extract karke APK/XAPK bundle auto-download karega.
+* **Step 1 (Package Extraction & Engine Classification)**:
+  - **Classification Gate**: Check karein ki target kya hai:
+    * *Type A: Normal UI/Utility App* (Flutter, React Native, Java/Kotlin).
+    * *Type B: Game Engine* (Unity IL2CPP `libil2cpp.so`, Unreal, Godot).
+  - **Dimension Gate (2D vs 3D Invariant)**:
+    * Agar target mein 3D engine, procedural meshes (`MeshGen`), ya 3D cameras detect hon, toh agent **bina user ki written permission ke silently 2D flat canvas choose NAHI karega**.
+    * Agent mandatory question puchega:
+      > *"Original target pure 3D engine (Unity/Mesh) par hai. Kya hum iska exact 3D render banayein (Godot/Three.js/Flutter 3D shader) ya lightweight 2D canvas?"*
+* **Step 2 (Feature Tracing)**: Trace core logic, math formulas, and level assets into clean-room specification (`CLEAN_ROOM_SPECIFICATION.md`).
+* **Step 3 (Stack Scaffolding)**: User ke chune hue dimension aur framework ke aadhar par project scaffold karein (Utility app ke liye Flutter/RN; 3D Game ke liye explicit 3D engine stack).
+* **Step 4 (Native Deliverable Verification)**:
+  * **True Deliverable Invariant**: Target APK hone par final completion receipt **`flutter build apk` ka real `.apk` binary on disk** hoga.
+  * Browser/Web preview (`flutter run -d chrome`) ko final APK completion nahi maana jayega. Run static analysis (`flutter analyze`), confirm 0 errors.
 
 ---
 
@@ -147,3 +152,11 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 
 6. **Receipts Over Prose**:
    * Har milestone par compiler output (`flutter analyze 0 errors`, `npm run build`), terminal exit code 0, ya automated test assertion proof lagana anivarya hai.
+
+7. **Engine Classification & Dimension Gate (Zero Silent 3D->2D Downgrades)**:
+   * Target analysis mein game engines (Unity, Unreal, Godot) ya 3D meshes/cameras detect hone par agent **bina user confirmation ke 2D flat canvas (`CustomPainter`) par silently downgrade NAHI kar sakta**.
+   * Agent ko 3D vs 2D ka explicit sawaal user se puchna aur stack align karna anivarya hai.
+
+8. **True Deliverable Invariant (Native Binary over Ephemeral Web Previews)**:
+   * Agar target ek Mobile APK tha, toh final deliverable receipt **`flutter build apk` ka real `.apk` binary on disk** hoga.
+   * Temporary web preview (`flutter run -d chrome`) ko final task completion claim nahi maana jayega.
