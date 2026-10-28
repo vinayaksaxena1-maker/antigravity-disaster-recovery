@@ -16,8 +16,8 @@ Kisi bhi target par inspection shuru karne se pehle, agent ko target type ke aad
 | Target Type | Required Dependency Checks | Action if Missing |
 | :--- | :--- | :--- |
 | **Website** | Headless Chrome, Puppeteer, DevTools bridge | Auto-install puppeteer / configure Chrome flags. |
-| **Android APK** | JADX, APKTool, Zip extractor | Auto-fetch JADX headless binaries. |
-| **Electron App** | ASAR unpacker, Node environment | Auto-install asar utility globally. |
+| **Android APK** | **Reverse**: JADX, APKTool, Zip extractor.<br>**Build Toolchain**: Flutter SDK, Java JDK (17+), Android SDK & build-tools (`flutter doctor -v`). | Auto-fetch JADX / run `flutter doctor --android-licenses` & verify build toolchain. |
+| **Electron App** | ASAR unpacker, Node environment, electron-builder | Auto-install asar and electron tools globally. |
 | **Native .EXE** | Java JDK (JRE 17+), Ghidra Decompiler | Download Ghidra from official release & map path. |
 
 > **Doctor Invariant**: Agar koi bhi tool missing ya RED report hota hai, agent analysis ko turant PAUSE karega, missing dependency ko download/configure karega, aur doctor dubara run karke **100% GREEN** hone par hi Step 1 par badhega.
@@ -133,11 +133,12 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
    * **Python/Backend Projects (`pyproject.toml` / `requirements.txt`)**:
      - Agent REST/API tasks ke liye `fastapi-pro` aur data logic ke liye `python-pro` route karega.
 
-2. **Automated Verification Tool Routing (Puppeteer vs Artemis)**:
+2. **Automated Verification Tool Routing (Puppeteer vs Artemis & Graceful Fallback)**:
    * **Web Verification (Category 1 & 4A)**:
      - Sirf **Puppeteer** use hoga live browser navigation, DOM render checks, button clicks, aur visual verification ke liye.
    * **Mobile/Android App Verification (Category 2 & 4B)**:
-     - Sirf **Google Artemis** use hoga live Android device/emulator QA testing, touch interactions, aur multimodal visual assertion receipts ke liye.
+     - **Priority 1 (Device / Emulator Online via ADB)**: Sirf **Google Artemis** use hoga live Android device/emulator QA testing, touch interactions, aur multimodal visual assertion receipts ke liye.
+     - **Priority 2 (No Live ADB Device Connected)**: Agent block ya freeze nahi hoga; balki native **Flutter Widget & Unit Tests (`flutter test`)** chalakar terminal verification receipt (exit code 0) dega aur user ko live preview ke liye emulator launch karne ka friendly alert dega.
 
 3. **Concise Planning Protocol (Sequential Roadmap Checkpoints)**:
    * Step 1 (Gap Analysis) complete hone ke baad agent seedha blind coding shuru nahi karega.
@@ -146,6 +147,7 @@ User ke input aate hi agent target ko corresponding prompt template mein auto-in
 4. **Token & Context Engineering Invariant**:
    * **Ghost Token Elimination**: Raw 18MB binary ya hazaron lines ka decompiled dump context mein kabhi nahi aayega; sirf targeted classes/models extract honge (98% token savings).
    * **Surgical Diffs vs Scratch Scaffolding (Clash 3 Resolution)**: Badi files ko poora overwrite karna strictly prohibited hai; sirf targeted `+N -M` lines badli jayengi. *Clarification*: Yeh rule pehle se bani files ko edit karte waqt aur Category 4A/4B migrations mein lagu hota hai. Category 1, 2, 3 mein fresh project banate waqt naye files scratch se bina kisi diff bandhan ke create honge.
+   * **Batch Script Protocol for Massive Assets/Levels (Clash 1 Resolution)**: Hazaron files (jaise 3,983 level JSONs ya 300+ images) ko ek-ek karke chat context mein read/write karna STRICTLY PROHIBITED hai. Agent ek headless local script (`scripts/batch_unpack.py` ya `.dart`) generate karke terminal se execute karega, aur sirf final status receipt (`[V] Extracted 3,983/3,983 items, Exit Code 0`) chat mein laayega. Isse context 100% clean rahega aur zero token blast hoga.
 
 5. **Clean-Room Enforcement & Asset IP Harmonization (Rule 5 & 12 Resolution)**:
    * **Proprietary Trademarks / Brand IP (BLOCKED)**: Target studio ke official brand logos, company watermarks, ya proprietary characters ko copy karna strictly prohibited hai (unki jagah custom clean branding aayegi).
